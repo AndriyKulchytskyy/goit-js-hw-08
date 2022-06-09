@@ -17,28 +17,8 @@ galleryRef.addEventListener('click', onItemClick);
 function onItemClick(event) {
   event.preventDefault();
 
-  //   if (event.target.tagName !== 'IMG') {
-  //     return;
-  //   }
-
   let gallery = new SimpleLightbox('.gallery a');
   gallery.options.captionPosition = 'bottom';
   gallery.options.captionDelay = 250;
   gallery.options.captionsData = 'alt';
 }
-//   const instance = basicLightbox.create(
-//     `<img src=${event.target.dataset.source} width="800" height="600">`,
-//     {
-//       onShow: instance => {
-//         function onSpaceKeydown(event) {
-//           if (event.code === 'Space') {
-//             galleryRef.removeEventListener('keydown', onSpaceKeydown);
-//             instance.close();
-//           }
-//         }
-//         galleryRef.addEventListener('keydown', onSpaceKeydown);
-//       },
-//     }
-//   );
-//   instance.show();
-// }
