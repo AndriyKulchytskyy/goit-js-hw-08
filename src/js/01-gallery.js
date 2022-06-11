@@ -12,13 +12,8 @@ const galleryRef = document.querySelector('.gallery');
 const galleryMarkup = galleryItems.map(makeGalleryMarkup).join('');
 galleryRef.innerHTML = galleryMarkup;
 
-galleryRef.addEventListener('click', onItemClick);
+let gallery = new SimpleLightbox('.gallery a', {});
 
-function onItemClick(event) {
-  event.preventDefault();
-
-  let gallery = new SimpleLightbox('.gallery a');
-  gallery.options.captionPosition = 'bottom';
-  gallery.options.captionDelay = 250;
-  gallery.options.captionsData = 'alt';
-}
+gallery.options.captionPosition = 'bottom';
+gallery.options.captionDelay = 250;
+gallery.options.captionsData = 'alt';
