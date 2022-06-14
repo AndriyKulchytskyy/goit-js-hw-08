@@ -32,10 +32,16 @@ refs.form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
-  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+  if (refs.email.value === '') {
+    alert('Email empty!!!');
+  } else if (refs.message.value === '') {
+    alert('Message empty!!!');
+  } else {
+    console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
 
-  localStorage.clear();
+    localStorage.clear();
 
-  refs.email.value = '';
-  refs.message.value = '';
+    refs.email.value = '';
+    refs.message.value = '';
+  }
 }
