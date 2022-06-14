@@ -41,7 +41,6 @@ function onSubmit(event) {
 
     localStorage.clear();
 
-    refs.email.value = '';
-    refs.message.value = '';
+    event.currentTarget.reset();
   }
 }
