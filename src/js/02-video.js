@@ -5,11 +5,11 @@ const LOCALSTORAGE_KEY = 'videoplayer - current - time';
 
 const iframe = document.querySelector('iframe');
 
-if (!JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY))) {
+const player = new Vimeo(iframe);
+
+if (!localStorage.getItem(LOCALSTORAGE_KEY)) {
   player.setCurrentTime(0);
 }
-
-const player = new Vimeo(iframe);
 
 player.on('timeupdate', throttle(onPlay, 1000));
 
