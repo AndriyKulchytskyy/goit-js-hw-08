@@ -16,7 +16,7 @@ if (storedObject) {
   refs.message.value = storedObject.message;
 }
 
-refs.form.addEventListener('input', onInput);
+refs.form.addEventListener('input', throttle(onInput, 500));
 
 function onInput(event) {
   const formElements = event.currentTarget.elements;
